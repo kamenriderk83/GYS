@@ -1,0 +1,297 @@
+/* 服務詳情頁面樣式 */
+body {
+    overflow-y: auto;
+}
+
+.service-detail {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.service-hero {
+    background: linear-gradient(rgba(210, 180, 140, 0.3), rgba(210, 180, 140, 0.3)),
+                url('../images/banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.service-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.service-subtitle {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.service-content {
+    padding: 4rem 0;
+    background-color: #f8f5f0;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.content-container h2 {
+    font-size: 2rem;
+    color: #4a3520;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    color: #4a3520;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.feature p {
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.schedule {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.schedule-item {
+    background: rgba(210, 180, 140, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.schedule-item h3 {
+    font-size: 1.3rem;
+    color: #4a3520;
+    margin-bottom: 0.5rem;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.schedule-item p {
+    color: #666;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+.contact-info {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(210, 180, 140, 0.1);
+    border-radius: 15px;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+}
+
+/* 祈福點燈頁面特殊樣式 */
+.light-blessing-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('../images/light.jpg');
+}
+
+.blessing-notes {
+    background: rgba(210, 180, 140, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0 4rem;
+}
+
+.blessing-notes h2 {
+    margin-bottom: 1.5rem;
+}
+
+.blessing-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blessing-notes li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4a3520;
+    font-family: "Songti SC", "STSong", "FangSong", serif;
+    line-height: 1.6;
+}
+
+.blessing-notes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-size: 1.2rem;
+}
+
+/* 燈種特效 */
+.service-features .feature {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.service-features .feature::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: lightPulse 4s infinite;
+    pointer-events: none;
+}
+
+@keyframes lightPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+    .service-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-hero {
+        height: 30vh;
+        min-height: 250px;
+    }
+
+    .service-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .service-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .content-container {
+        padding: 0 1.5rem;
+    }
+
+    .content-container h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .feature {
+        padding: 1.2rem;
+    }
+
+    .feature h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .blessing-notes {
+        padding: 1.5rem;
+    }
+
+    .blessing-notes li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-hero h1 {
+        font-size: 2rem;
+    }
+
+    .service-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .content-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .feature {
+        padding: 1rem;
+    }
+
+    .feature h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .feature p {
+        font-size: 0.85rem;
+    }
+
+    .schedule-item {
+        padding: 1.2rem;
+    }
+}
